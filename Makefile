@@ -27,7 +27,7 @@ endif
 
 .PHONY: examples
 examples:
-	$(MAKE) -c uSockets
+	$(MAKE) -C uSockets
 	$(foreach FILE,$(EXAMPLE_FILES),$(CXX) -flto -O3 $(CXXFLAGS) examples/$(FILE).cpp -o $(FILE) $(LDFLAGS);)
 	$(foreach FILE,$(THREADED_EXAMPLE_FILES),$(CXX) -pthread -flto -O3 $(CXXFLAGS) examples/$(FILE).cpp -o $(FILE) $(LDFLAGS);)
 
